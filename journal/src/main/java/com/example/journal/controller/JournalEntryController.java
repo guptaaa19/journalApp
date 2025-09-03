@@ -77,7 +77,7 @@ public class JournalEntryController {
         if(old != null) {
             old.setTitle(newEntry.getTitle() != null && !newEntry.getTitle().equals("") ? newEntry.getTitle() : old.getTitle());
             old.setContent(newEntry.getContent() != null && !newEntry.getContent().equals("") ? newEntry.getContent() : old.getContent());
-            journalEntryService.saveEntry(old);
+            journalEntryService.saveEntry(old );
             return ResponseEntity.ok(old);
         }
         return ResponseEntity.notFound().build();
